@@ -18,7 +18,7 @@ public class CalcController {
 
     @GetMapping("/about")
     public String Home() {
-        return "Первый проект на Spring + Maven. <a href=\"http://localhost:8080/calculator\">Калькулятор 1.0</a>";
+        return "Первый проект на Spring + Maven. Теперь с тестами! <a href=\"http://localhost:8080/calculator\">Калькулятор 1.1</a>";
     }
 
     @GetMapping
@@ -53,9 +53,6 @@ public class CalcController {
 
     @GetMapping("/divide")
     public String divide(@RequestParam("num1") int a, @RequestParam("num2") int b) {
-        if (b == 0)
-            return "<img src=\"https://www.meme-arsenal.com/memes/37ad910746046a525647e382204b0e7b.jpg\" alt=\"Нельзя просто так взять и поделить на ноль\">" +
-                    "<br> <a href=\"http://localhost:8080/calculator\">Назад</a>";
         int result = calculatorService.divide(a, b);
         return String.format("%s / %s = %s <br> <a href=\"http://localhost:8080/calculator\">Назад</a>", a, b, result);
     }

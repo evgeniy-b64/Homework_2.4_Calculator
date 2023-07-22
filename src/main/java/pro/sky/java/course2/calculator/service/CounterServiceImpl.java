@@ -22,6 +22,8 @@ public class CounterServiceImpl implements CalculatorService {
 
     @Override
     public int divide(int a, int b) {
-        return a / b;
+        if (b != 0) return a / b;
+        else throw new IllegalArgumentException("Нельзя просто так взять и поделить на ноль <br> <a href=\"http://localhost:8080/calculator\">Назад</a>");
+
     }
 }
